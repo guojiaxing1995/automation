@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+  <block wx:if="{{!hasUserInfo && canIUse}}">
+      <image class="userinfo-avatar" src="/images/welecome.png" mode="cover"></image>
+      <text class="userinfo-nickname">Hi,testers</text>
+    </block>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">Hi,{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <button class="usermotto" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    <text class="user-motto">{{motto}}</text>
+  </button>
+</view>

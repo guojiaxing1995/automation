@@ -1,15 +1,47 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/report/report",
+    "pages/schedule/schedule",
+    "pages/searchCase/searchCase",
+    "pages/spiderBatch/spiderBatch"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "automation",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "usingComponents": {
     "van-button": "/miniprogram_npm/vant-weapp/button/index"
-  }
+  },
+    "tabBar": {
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/report/report",
+          "text": "执行报告",
+          "iconPath": "images/tab/ciwei.png",
+          "selectedIconPath": "images/tab/ciwei_hl.png"
+        },
+        {
+          "pagePath": "pages/searchCase/searchCase",
+          "text": "用例查询",
+          "iconPath": "images/tab/ciwei.png",
+          "selectedIconPath": "images/tab/ciwei_hl.png"
+        },
+        {
+          "pagePath": "pages/schedule/schedule",
+          "text": "定时任务",
+          "iconPath": "images/tab/ciwei.png",
+          "selectedIconPath": "images/tab/ciwei_hl.png"
+        },
+        {
+          "pagePath": "pages/spiderBatch/spiderBatch",
+          "text": "批量执行",
+          "iconPath": "images/tab/ciwei.png",
+          "selectedIconPath": "images/tab/ciwei_hl.png"
+        }
+      ]
+    }
 }

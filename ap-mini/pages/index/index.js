@@ -56,10 +56,15 @@ Page({
       hasUserInfo: true
     })
       }
+      setTimeout(function () {
+        wx.switchTab({
+          url: '/pages/report/report',
+        })
+      }, 5 * 1000);
   }else{
-    // wx.switchTab({
-    //   url: '',
-    // })
+    wx.switchTab({
+      url: '/pages/report/report',
+    })
     console.log(1);
   }
   },

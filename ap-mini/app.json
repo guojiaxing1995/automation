@@ -17,30 +17,33 @@
   },
     "tabBar": {
       "borderStyle": "white",
+      "selectedColor": "#f57723",
+      "color": "black",
       "list": [
         {
           "pagePath": "pages/report/report",
           "text": "执行报告",
-          "iconPath": "images/tab/ciwei.png",
-          "selectedIconPath": "images/tab/ciwei_hl.png"
+          "iconPath": "images/tab/report.png",
+          "selectedIconPath": "images/tab/report_1.png",
+          "selectedColor": "#f57723"
         },
         {
           "pagePath": "pages/searchCase/searchCase",
           "text": "用例查询",
-          "iconPath": "images/tab/ciwei.png",
-          "selectedIconPath": "images/tab/ciwei_hl.png"
+          "iconPath": "images/tab/searchCase.png",
+          "selectedIconPath": "images/tab/searchCase_1.png"
         },
         {
           "pagePath": "pages/schedule/schedule",
           "text": "定时任务",
-          "iconPath": "images/tab/ciwei.png",
-          "selectedIconPath": "images/tab/ciwei_hl.png"
+          "iconPath": "images/tab/schedule.png",
+          "selectedIconPath": "images/tab/schedule_1.png"
         },
         {
           "pagePath": "pages/spiderBatch/spiderBatch",
           "text": "批量执行",
-          "iconPath": "images/tab/ciwei.png",
-          "selectedIconPath": "images/tab/ciwei_hl.png"
+          "iconPath": "images/tab/spiderBatch.png",
+          "selectedIconPath": "images/tab/spiderBatch_1.png"
         }
       ]
     }

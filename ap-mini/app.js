@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    automationBase: "http://127.0.0.1:5005",
+    //automationBase: "http://47.96.119.223:5005"
   }
 })

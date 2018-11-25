@@ -4,7 +4,8 @@
     "pages/report/report",
     "pages/schedule/schedule",
     "pages/searchCase/searchCase",
-    "pages/spiderBatch/spiderBatch"
+    "pages/spiderBatch/spiderBatch",
+    "pages/searchCase/caseDetail/caseDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,38 +14,43 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "van-button": "/miniprogram_npm/vant-weapp/button/index"
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+    "van-transition": "/miniprogram_npm/vant-weapp/transition/index",
+    "van-tree-select": "/miniprogram_npm/vant-weapp/tree-select/index",
+    "van-search": "/miniprogram_npm/vant-weapp/search/index",
+    "van-loading": "/miniprogram_npm/vant-weapp/loading/index"
   },
-    "tabBar": {
-      "borderStyle": "white",
-      "selectedColor": "#f57723",
-      "color": "black",
-      "list": [
-        {
-          "pagePath": "pages/report/report",
-          "text": "执行报告",
-          "iconPath": "images/tab/report.png",
-          "selectedIconPath": "images/tab/report_1.png",
-          "selectedColor": "#f57723"
-        },
-        {
-          "pagePath": "pages/searchCase/searchCase",
-          "text": "用例查询",
-          "iconPath": "images/tab/searchCase.png",
-          "selectedIconPath": "images/tab/searchCase_1.png"
-        },
-        {
-          "pagePath": "pages/schedule/schedule",
-          "text": "定时任务",
-          "iconPath": "images/tab/schedule.png",
-          "selectedIconPath": "images/tab/schedule_1.png"
-        },
-        {
-          "pagePath": "pages/spiderBatch/spiderBatch",
-          "text": "批量执行",
-          "iconPath": "images/tab/spiderBatch.png",
-          "selectedIconPath": "images/tab/spiderBatch_1.png"
-        }
-      ]
-    }
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#f57723",
+    "color": "black",
+    "list": [
+      {
+        "pagePath": "pages/report/report",
+        "text": "执行报告",
+        "iconPath": "images/tab/report.png",
+        "selectedIconPath": "images/tab/report_1.png",
+        "selectedColor": "#f57723"
+      },
+      {
+        "pagePath": "pages/searchCase/searchCase",
+        "text": "用例查询",
+        "iconPath": "images/tab/searchCase.png",
+        "selectedIconPath": "images/tab/searchCase_1.png"
+      },
+      {
+        "pagePath": "pages/schedule/schedule",
+        "text": "定时任务",
+        "iconPath": "images/tab/schedule.png",
+        "selectedIconPath": "images/tab/schedule_1.png"
+      },
+      {
+        "pagePath": "pages/spiderBatch/spiderBatch",
+        "text": "批量执行",
+        "iconPath": "images/tab/spiderBatch.png",
+        "selectedIconPath": "images/tab/spiderBatch_1.png"
+      }
+    ]
+  }
 }

@@ -1,0 +1,49 @@
+/* pages/searchCase/caseDetail/caseDetail.wxss */
+.no-result{
+  margin-top: 50%;
+  text-align:center;
+}
+.no-result text{
+  font-size: 41rpx;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-left: 5rpx;
+  color: #bfbfbf;
+}
+.no-result image{
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: middle;
+}
+.caseDetail{
+  margin-top: 20px;
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+}
+.line{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  word-break:break-all;
+}
+/* image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 12rpx;
+} */
+.line .title{
+  font-size: 32rpx;
+  color: #8a8a8a;
+   vertical-align: middle;
+   white-space:nowrap;
+}
+.line .text{
+  font-size: 32rpx;
+  color: #515151;
+   vertical-align: middle;
+   margin-left: 15rpx;
+   
+}

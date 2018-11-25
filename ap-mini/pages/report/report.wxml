@@ -1,4 +1,26 @@
 <!--pages/report/report.wxml-->
-<view class="container">
-  <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}" bind:init="echartInit"></ec-canvas>
+<view class="container" bindtouchstart='touchStart' bindtouchend="touchEnd">
+  <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}" ></ec-canvas>
+  <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" ></ec-canvas>
+
+  <van-popup show="{{ popupShow}}" bind:close="onPopupClose" z-index='200' position="right" duration="1000" custom-style="height:100%;width:61.8%">
+    <view class='tasks'>
+      <block wx:for="{{taskData}}" wx:for-item="task" >
+        <view class='task-item' catchtap='selectTask' data-task='{{task}}'>
+          <view class='task-title van-ellipsis'>
+            <image wx:if="{{taskID==task.id}}" src='/images/project_1.png'></image>
+            <image wx:else src='/images/project.png'></image>
+            <text>{{task.name}}</text>
+          </view>
+          <view class='van-ellipsis'>
+            <text wx:if="{{task.request_header}}" class='task-url'>{{task.request_header}}</text>
+            <text wx:else>该任务暂无公共请求地址</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </van-popup>
+  <van-transition show="{{ leftIconSlid }}" name="fade" duration="1500">
+    <image class='left-slide-icon' src='/images/bhjleftslide.png'></image>
+  </van-transition>
 </view>

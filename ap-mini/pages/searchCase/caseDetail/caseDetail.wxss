@@ -20,6 +20,7 @@
   width: 82%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 .line{
   margin-top: 5px;
@@ -39,11 +40,12 @@
   color: #8a8a8a;
    vertical-align: middle;
    white-space:nowrap;
+   width: 27%;
 }
 .line .text{
   font-size: 32rpx;
   color: #515151;
    vertical-align: middle;
    margin-left: 15rpx;
-   
+   width: 73%;
 }

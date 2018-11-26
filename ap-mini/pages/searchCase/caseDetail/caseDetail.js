@@ -7,7 +7,8 @@ Page({
    */
   data: {
     noresult: false,
-    loading: false
+    loading: true,
+    detail:false
   },
 
   /**
@@ -32,12 +33,22 @@ Page({
       },
       success: function (res) {
         if(res.data.error_code){
-          console.log(res.data)
+          that.setData({
+            detail: false,
+            noresult: true,
+            loading:false
+          });
         }else{
         that.setData({
-          caseDetail: res.data
+          caseDetail: res.data,
+          detail: true,
+          noresult: false,
+          loading: false
         });
         }
+        wx.setNavigationBarTitle({
+          title: res.data.case_id,
+        })
       },
       fail: function (error) {
         // fail
@@ -55,8 +66,14 @@ Page({
       },
       success: function (res) {
         that.setData({
-          caseDetail: res.data
+          caseDetail: res.data,
+          detail: true,
+          noresult: false,
+          loading: false
         });
+        wx.setNavigationBarTitle({
+          title: res.data.case_id,
+        })
       },
       fail: function (error) {
         // fail

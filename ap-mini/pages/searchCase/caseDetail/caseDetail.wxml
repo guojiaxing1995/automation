@@ -5,13 +5,73 @@
   <text>未查询到用例</text>
 </view>
 
-<view class='container'>
+<view class='container' wx:if="{{detail}}">
   <view class='caseDetail'>
     <view class='line'>
       <!-- <image src='/images/case/case_id'></image> -->
-      <text class='title'>用例编号：</text>
-      <text class='text'>{asdfslddfljglskdfjgldkfjgldfkjgldkfjgldfkjgjfl}</text>
+      <text class='title'>用例名称：</text>
+      <text class='text'>{{caseDetail.case_name}}</text>
     </view>
-    <view>dd</view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>用例编号：</text>
+      <text class='text'>{{caseDetail.case_id}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>请求方式：</text>
+      <text class='text'>{{caseDetail.method}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>URL：</text>
+      <text class='text'>{{caseDetail.url}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>是否执行：</text>
+      <text class='text' wx:if="{{caseDetail.is_run}}">是</text>
+      <text class='text' wx:else>否</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>提交方式：</text>
+      <text class='text' wx:if="{{caseDetail.submission==1}}">json提交</text>
+      <text class='text' wx:if="{{caseDetail.submission==0}}">data提交</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>依赖用例：</text>
+      <text class='text'>{{caseDetail.dependent_case}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>处理方法：</text>
+      <text class='text' wx:if="{{caseDetail.deal_method==0}}">不做处理</text>
+      <text class='text' wx:if="{{caseDetail.deal_method==1}}">默认处理</text>
+      <text class='text' wx:if="{{caseDetail.deal_method==2}}">为目标value赋新key</text>
+      <text class='text' wx:if="{{caseDetail.deal_method==3}}">正则表达式取值</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>处理语句：</text>
+      <text class='text'>{{caseDetail.need_position}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>header：</text>
+      <text class='text'>{{caseDetail.header}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>data：</text>
+      <text class='text'>{{caseDetail.data}}</text>
+    </view>
+    <view class='line'>
+      <!-- <image src='/images/case/case_id'></image> -->
+      <text class='title'>预期结果：</text>
+      <text class='text'>{{caseDetail.expect_result}}</text>
+    </view>
+    
   </view>
 </view>

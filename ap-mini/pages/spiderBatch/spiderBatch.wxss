@@ -1,1 +1,156 @@
 /* pages/spiderBatch/spiderBatch.wxss */
+.head-img{
+  width: 100%;
+  height: 400rpx;
+  /* -webkit-filter: opacity(20%); */
+  -webkit-filter: blur(6px);
+}
+.container{
+  width: 100%;
+  justify-content:flex-start;
+
+}
+.title{
+    font-size: 23px;
+    color:#fff;
+    font-weight:bold;
+    margin-top: 50rpx;
+    margin-left: 40rpx;
+    letter-spacing: 2px;
+    margin-right: 40rpx;
+}
+.head-img-hover{
+    width: 100%;
+    height: 400rpx;
+    position:absolute;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction: column;
+}
+.url{
+    font-size: 28rpx;
+    color:#fff;
+    margin-left: 40rpx;
+    margin-top: 30rpx;
+    margin-right: 40rpx;
+}
+.description{
+  font-size: 34rpx;
+    color:#fff;
+    margin-left: 40rpx;
+    margin-top: 40rpx;
+    margin-right: 40rpx;
+    font-family: "宋体";
+}
+.run{
+  width: 100%;
+}
+.run-btn{
+  margin-top: 30rpx;
+  margin-left: auto;
+  margin-right: 50rpx;
+  float: right;
+}
+.hr{
+    margin-top:30rpx;
+    height:1px;
+    width: 100%;
+    background-color: #d9d9d9;
+}
+.result{
+  margin-top:30rpx;
+  width:90%;
+  margin-left:auto;
+
+}
+.result text{
+  font-size: 30rpx;
+  color: #666;
+}
+.result weight{
+  font-weight: 700;
+}
+.result .success{
+  font-size: 35rpx;
+  color: black;
+}
+.result .fail{
+  font-size: 35rpx;
+  color: black;
+}
+.result #success{
+  color: green;
+}
+.result #fail{
+  color: red;
+}
+.case-result{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top:30rpx;
+  margin-bottom: 30rpx;
+}
+.case-result-line{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 10rpx auto 5rpx auto;
+}
+.case-result-line text{
+  margin-right: 25rpx;
+  float: right;
+  font-size: 36rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.case-name{
+  width: 50%;
+  vertical-align: middle;
+}
+.case-btn{
+  margin-left: 25rpx;
+}
+.left-slide-icon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  bottom: 5px;
+  right: 5rpx;
+  z-index: 109;
+}
+
+.tasks {
+}
+.task-title{
+  display: block;
+}
+.task-title text{
+  color: #030a1a;
+  font-size: 34rpx;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-left: 5rpx;
+}
+
+.task-item image {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+
+.task-item {
+  padding: 15rpx 10rpx 15rpx 10rpx;
+}
+.task-url{
+  font-size: 26rpx;
+  margin-left: 15rpx;
+}
+.loading{
+  margin-top: 25%;
+  text-align:center;
+}
+page{
+  height: 100%
+}

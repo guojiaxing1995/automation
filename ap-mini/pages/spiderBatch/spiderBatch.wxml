@@ -1,2 +1,74 @@
 <!--pages/spiderBatch/spiderBatch.wxml-->
-<text>pages/spiderBatch/spiderBatch.wxml</text>
+<view class='container' bindtouchstart='touchStart' bindtouchend="touchEnd">
+  <image class='head-img' src='/images/header.png' mode='aspectFill'></image>
+  <view class='head-img-hover'>
+    <text class="title van-ellipsis">{{task.name}}</text>
+    <text wx:if="{{task.request_header}}" class='url van-multi-ellipsis--l2'>{{task.request_header}}</text>
+    <text wx:else class='url van-multi-ellipsis--l2' decode="{{true}}">&nbsp;</text>
+    <text wx:if="{{task.description}}" class='description van-multi-ellipsis--l3'>任务描述：{{task.description}}</text>
+    <text wx:else class='description van-multi-ellipsis--l3'>任务描述：暂无</text>
+  </view>
+  <view class='run'>
+    <van-button custom-class='run-btn' plain size="small" type="warning" bind:click="run" loading="{{btn_loading}}">执行</van-button>
+  </view>
+  <view wx:if="{{has_run}}" style='width:100%'>
+  <view class="hr"></view>
+  <view class='result'>
+    <view>
+      <text>任务用例共</text>
+      <text>{{result.total}}</text>
+      <text>条，此次执行</text>
+      <text>{{result.has_run}}</text>
+      <text>条，执行率</text>
+      <text class='weight'>{{result.execute_probability}}%</text>
+    </view>
+    <view>
+      <text>其中通过</text>
+      <text>{{result.pass_num}}</text>
+      <text>条，</text>
+      <text id='success'>通过率</text>
+      <text class='weight success'>{{result.pass_probability}}%</text>
+    </view>
+    <view>
+      <view>
+        <text>失败</text>
+        <text>{{result.fail_num}}</text>
+        <text>条，</text>
+        <text id='fail'>失败率</text>
+        <text class='weight fail'>{{result.fail_probability}}%</text>
+      </view>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class='case-result'>
+  <block wx:for="{{case_reslut}}" wx:for-item="case">
+    <view class='case-result-line'>
+      <view class='case-name van-ellipsis'><text >{{case.case_name}}</text></view>
+      <van-button wx:if="{{case.actual_result==1}}" type="primary" size="small" custom-class="case-btn">pass</van-button>
+      <van-button wx:else type="danger" size="small" custom-class="case-btn">fail</van-button>
+    </view>
+    </block>
+  </view>
+  </view>
+  <view class='loading'  wx:if="{{loading}}"><van-loading type="spinner"/></view>
+    <van-popup show="{{ popupShow}}" bind:close="onPopupClose" z-index='200' position="right" duration="1000" custom-style="height:100%;width:61.8%">
+    <view class='tasks'>
+      <block wx:for="{{taskData}}" wx:for-item="task" >
+        <view class='task-item' catchtap='selectTask' data-task='{{task}}'>
+          <view class='task-title van-ellipsis'>
+            <image wx:if="{{taskID==task.id}}" src='/images/project_1.png'></image>
+            <image wx:else src='/images/project.png'></image>
+            <text>{{task.name}}</text>
+          </view>
+          <view class='van-ellipsis'>
+            <text wx:if="{{task.request_header}}" class='task-url'>{{task.request_header}}</text>
+            <text wx:else>该任务暂无公共请求地址</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </van-popup>
+  <van-transition show="{{ leftIconSlid }}" name="fade" duration="1500">
+    <image class='left-slide-icon' src='/images/bhjleftslide.png'></image>
+  </van-transition>
+</view>

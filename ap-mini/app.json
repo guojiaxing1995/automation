@@ -19,7 +19,8 @@
     "van-transition": "/miniprogram_npm/vant-weapp/transition/index",
     "van-tree-select": "/miniprogram_npm/vant-weapp/tree-select/index",
     "van-search": "/miniprogram_npm/vant-weapp/search/index",
-    "van-loading": "/miniprogram_npm/vant-weapp/loading/index"
+    "van-loading": "/miniprogram_npm/vant-weapp/loading/index",
+    "van-notify": "/miniprogram_npm/vant-weapp/notify/index"
   },
   "tabBar": {
     "borderStyle": "white",

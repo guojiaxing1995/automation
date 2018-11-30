@@ -1,5 +1,5 @@
 <!--pages/searchCase/caseDetail/caseDetail.wxml-->
-<view class='loading'><van-loading type="spinner" wx:if="{{loading}}"/></view>
+<view class='loading'  wx:if="{{loading}}"><van-loading type="spinner"/></view>
 <view class='no-result' wx:if="{{noresult}}">
   <image src='/images/noresult.png'></image>
   <text>未查询到用例</text>

@@ -1,4 +1,8 @@
 /* pages/searchCase/caseDetail/caseDetail.wxss */
+.loading{
+  margin-top: 50%;
+  text-align:center;
+}
 .no-result{
   margin-top: 50%;
   text-align:center;
@@ -17,7 +21,7 @@
 }
 .caseDetail{
   margin-top: 20px;
-  width: 82%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;

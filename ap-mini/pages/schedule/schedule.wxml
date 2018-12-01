@@ -1,2 +1,39 @@
 <!--pages/schedule/schedule.wxml-->
-<text>pages/schedule/schedule.wxml</text>
+<view class='loading'  wx:if="{{loading}}"><van-loading type="spinner"/></view>
+<view class='container' wx:if="{{jobs}}">
+<block  wx:for="{{jobs}}" wx:for-item="job">
+  <view class='line'>
+    <view class='main-title'>
+      <view class='title'>
+        <view class='schedule_id '>
+          <image src='/images/case/case_id.png'></image>
+          <text>{{job.scheduler_id}}</text>
+        </view>
+        <view class='task'>
+          <text>所属任务：</text>
+          <van-button plain type="warning" size="mini" custom-class="task-btn" bind:click='toTask' data-id='{{job.task.id}}'>{{job.task.name}}</van-button>
+        </view>
+      </view>
+      <view class='run-icon'>
+        <image wx:if="{{job.running_state==1}}" src='/images/case/run.png'></image>
+        <image wx:if="{{job.running_state==0}}" src='/images/case/notrun.png'></image>
+      </view>
+    </view>
+    <view class='time'>
+      <text>执行规则：day_of_week:</text><text class='t'> {{job.day_of_week}}</text><text> hour:</text><text class='t'> {{job.hour}}</text><text> minute: </text><text class='t'>{{job.minute}}</text>
+    </view>
+    <view class='next-time'>
+      <text>下次执行时间：</text><text wx:if="{{job.next_run_time}}" class='t'>{{job.next_run_time}}</text><text wx:else class='t'></text>
+    </view>
+    <view class='btn'>
+      <view class='user'>
+        <text>维护人：</text><text class='t'>{{job.user.nickname}}（{{job.user.email}}）</text>
+      </view>
+      <van-button custom-class='run-btn' size="small" type="primary" bind:click="startJob" data-schedulerid='{{job.scheduler_id}}' disabled='{{job.running_state==1}}'>启动</van-button>
+      <van-button custom-class='run-btn' size="small" type="danger" bind:click="pauseJob"  data-schedulerid='{{job.scheduler_id}}' disabled='{{job.running_state==0}}'>停止</van-button>
+    </view>
+  </view>
+</block>
+
+</view>
+<van-notify id="van-notify" />

@@ -42,13 +42,13 @@
 				{
 					"id": 0,
 					"name": "a",
-					"pathName": "pages/searchCase/searchCase",
+					"pathName": "pages/spiderBatch/result/result",
 					"query": ""
 				},
 				{
 					"id": 1,
-					"name": "a",
-					"pathName": "pages/spiderBatch/spiderBatch",
+					"name": "av",
+					"pathName": "pages/schedule/schedule",
 					"query": ""
 				}
 			]

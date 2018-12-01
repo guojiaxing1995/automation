@@ -5,13 +5,15 @@
     "pages/schedule/schedule",
     "pages/searchCase/searchCase",
     "pages/spiderBatch/spiderBatch",
-    "pages/searchCase/caseDetail/caseDetail"
+    "pages/searchCase/caseDetail/caseDetail",
+    "pages/spiderBatch/result/result"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "automation",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
   },
   "usingComponents": {
     "van-button": "/miniprogram_npm/vant-weapp/button/index",
@@ -20,7 +22,9 @@
     "van-tree-select": "/miniprogram_npm/vant-weapp/tree-select/index",
     "van-search": "/miniprogram_npm/vant-weapp/search/index",
     "van-loading": "/miniprogram_npm/vant-weapp/loading/index",
-    "van-notify": "/miniprogram_npm/vant-weapp/notify/index"
+    "van-notify": "/miniprogram_npm/vant-weapp/notify/index",
+    "van-toast": "/miniprogram_npm/vant-weapp/toast/index",
+    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index"
   },
   "tabBar": {
     "borderStyle": "white",

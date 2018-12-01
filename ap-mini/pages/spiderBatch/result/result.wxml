@@ -1,0 +1,15 @@
+<!--pages/spiderBatch/result/result.wxml-->
+<view>
+  <view id='expect_result'>
+    <text class='title'>预期结果：</text>
+    <scroll-view scroll-y>
+      <view class='content'><text class='content'>{{expect_result}}</text></view>
+    </scroll-view>
+  </view>
+  <view id='interface_return'>
+    <text class='title'>接口返回：</text>
+    <scroll-view scroll-y='true' scroll-x='true'>
+      <view class='content'><text class='content'>{{interface_return}}</text></view>
+    </scroll-view>
+  </view>
+</view>

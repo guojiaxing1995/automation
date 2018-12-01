@@ -1,1 +1,90 @@
 /* pages/schedule/schedule.wxss */
+.container{
+  width: 100%;
+  justify-content:flex-start;
+  padding-top: 20rpx;
+}
+.line{
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35rpx;
+}
+.main-title{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.schedule_id{
+  display: flex;
+  flex-direction: row;
+}
+.schedule_id image{
+  vertical-align: middle;
+  width: 43rpx;
+  height: 43rpx;
+}
+.schedule_id text{
+  vertical-align: middle;
+  font-size: 30rpx;
+  margin-left: 15rpx;
+  color: #707070;
+  font-weight: 600;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+.task{
+  display: flex;
+  flex-direction: row;
+  margin-top: 18rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.task text{
+  vertical-align: middle;
+  font-size: 26rpx;
+  color: #888;
+  
+}
+.task-btn{
+ vertical-align: middle;
+}
+.run-icon image{
+  width: 55rpx;
+  height: 55rpx;
+  vertical-align: middle;
+  text-align: center;
+}
+.run-icon{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.btn{
+  
+  width: 100%;
+}
+.run-btn{
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  float: right;
+}
+.t{
+  color: black;
+  font-weight: 500;
+  font-size: 26rpx;
+}
+text{
+  color: #888;
+}
+.loading{
+  margin-top: 50%;
+  text-align:center;
+}

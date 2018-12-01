@@ -43,9 +43,9 @@
   <view class='case-result'>
   <block wx:for="{{case_reslut}}" wx:for-item="case">
     <view class='case-result-line'>
-      <view class='case-name van-ellipsis'><text >{{case.case_name}}</text></view>
-      <van-button wx:if="{{case.actual_result==1}}" type="primary" size="small" custom-class="case-btn">pass</van-button>
-      <van-button wx:else type="danger" size="small" custom-class="case-btn">fail</van-button>
+      <view class='case-name van-ellipsis'><text catchtap='caseDetail' data-caseid='{{case.case_id}}'>{{case.case_name}}</text></view>
+      <van-button wx:if="{{case.actual_result==1}}" type="primary" size="small" custom-class="case-btn" bind:click="toResult" data-c='{{case}}'>pass</van-button>
+      <van-button wx:else type="danger" size="small" custom-class="case-btn" bind:click="toResult" data-c='{{case}}'>fail</van-button>
     </view>
     </block>
   </view>
@@ -71,4 +71,7 @@
   <van-transition show="{{ leftIconSlid }}" name="fade" duration="1500">
     <image class='left-slide-icon' src='/images/bhjleftslide.png'></image>
   </van-transition>
+  <van-toast id="van-toast"/>
+  
 </view>
+<van-notify id="van-notify" />

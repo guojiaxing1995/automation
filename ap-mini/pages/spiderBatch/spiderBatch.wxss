@@ -99,7 +99,7 @@
   margin: 10rpx auto 5rpx auto;
 }
 .case-result-line text{
-  margin-right: 25rpx;
+  margin-right: 30rpx;
   float: right;
   font-size: 36rpx;
   height: 60rpx;
@@ -110,7 +110,7 @@
   vertical-align: middle;
 }
 .case-btn{
-  margin-left: 25rpx;
+  margin-left: 30rpx;
 }
 .left-slide-icon {
   width: 32px;

@@ -68,9 +68,6 @@ Page({
     }
     return turn;
   },
-  onReady() {
-  
-  },
   onPopupClose(){
     var that = this;
     this.setData({ popupShow: false });
@@ -243,7 +240,6 @@ Page({
         }]
       };
       Chart.setOption(option);
-      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
       return Chart;
     });
   },
@@ -315,7 +311,6 @@ Page({
         }]
       };
       Chart.setOption(option);
-      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
       return Chart;
     });
   }

@@ -1,4 +1,3 @@
-<!--pages/spiderBatch/result/result.wxml-->
 <view>
   <view id='expect_result'>
     <text class='title'>预期结果：</text>

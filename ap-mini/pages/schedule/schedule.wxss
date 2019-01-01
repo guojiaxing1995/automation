@@ -1,4 +1,3 @@
-/* pages/schedule/schedule.wxss */
 .container{
   width: 100%;
   justify-content:flex-start;

@@ -1,4 +1,3 @@
-/* pages/spiderBatch/result/result.wxss */
 .container {
   position: absolute;
   top: 0;

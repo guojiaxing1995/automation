@@ -1,4 +1,3 @@
-<!--pages/schedule/schedule.wxml-->
 <view class='loading'  wx:if="{{loading}}"><van-loading type="spinner"/></view>
 <view class='container' wx:if="{{jobs}}">
 <block  wx:for="{{jobs}}" wx:for-item="job">

@@ -1,4 +1,3 @@
-//index.js
 //获取应用实例
 const app = getApp()
 
@@ -8,12 +7,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -55,12 +48,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '/pages/report/report',
+          })
+        }, 4 * 1000);
       }
-      setTimeout(function () {
-        wx.switchTab({
-          url: '/pages/report/report',
-        })
-      }, 5 * 1000);
+      
   }else{
     wx.switchTab({
       url: '/pages/report/report',

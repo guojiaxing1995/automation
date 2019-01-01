@@ -1,4 +1,3 @@
-/* pages/spiderBatch/spiderBatch.wxss */
 .head-img{
   width: 100%;
   height: 400rpx;

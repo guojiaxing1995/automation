@@ -1,4 +1,3 @@
-/* pages/searchCase/caseDetail/caseDetail.wxss */
 .loading{
   margin-top: 50%;
   text-align:center;

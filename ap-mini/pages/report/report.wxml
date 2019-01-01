@@ -1,4 +1,3 @@
-<!--pages/report/report.wxml-->
 <view class="container" bindtouchstart='touchStart' bindtouchend="touchEnd">
   <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}" ></ec-canvas>
   <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" ></ec-canvas>

@@ -1,4 +1,3 @@
-<!--pages/spiderBatch/spiderBatch.wxml-->
 <view class='container' bindtouchstart='touchStart' bindtouchend="touchEnd">
   <image class='head-img' src='/images/header.png' mode='aspectFill'></image>
   <view class='head-img-hover'>

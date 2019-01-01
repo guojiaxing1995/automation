@@ -1,5 +1,3 @@
-/* pages/report/report.wxss */
-
 .container {
   position: absolute;
   top: 0;

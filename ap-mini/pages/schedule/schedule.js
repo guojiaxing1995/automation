@@ -91,12 +91,18 @@ Page({
             backgroundColor: '#24db56'
           });
         }else{
-          Notify("启动失败");
+          Notify({
+            text:"启动失败",
+            backgroundColor: '#FF2A64'
+            });
         }
         wx.hideNavigationBarLoading();
       },
       fail: function (error) {
-        Notify("启动失败");
+        Notify({
+          text:"启动失败",
+          backgroundColor: '#FF2A64'
+        });
         wx.hideNavigationBarLoading();
       }
     })

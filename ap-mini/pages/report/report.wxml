@@ -1,6 +1,7 @@
 <view class="container" bindtouchstart='touchStart' bindtouchend="touchEnd">
-  <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}" ></ec-canvas>
-  <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" ></ec-canvas>
+  <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}" bindtouchstart='touchStart' bindtouchend='touchEnd'></ec-canvas>
+  <ec-canvas wx:if="{{!popupShow}}" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" 
+  bindtouchstart='touchStart' bindtouchend='touchEnd'></ec-canvas>
 
   <van-popup show="{{ popupShow}}" bind:close="onPopupClose" z-index='200' position="right" duration="1000" custom-style="height:100%;width:61.8%">
     <view class='tasks'>

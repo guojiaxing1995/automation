@@ -27,9 +27,9 @@
     "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index"
   },
   "tabBar": {
-    "borderStyle": "white",
+    "borderStyle": "#FFFFFF",
     "selectedColor": "#f57723",
-    "color": "black",
+    "color": "#000000",
     "list": [
       {
         "pagePath": "pages/report/report",

@@ -5,10 +5,11 @@ const app = getApp();
 Page({
   data: {
     ecPie: {
+      disableTouch: true,//禁止触摸事件，修复ios无法滑动
       lazyLoad: true
     },
     ecLine: {
-
+      disableTouch: true
     },
     touch:{
       endX:0,

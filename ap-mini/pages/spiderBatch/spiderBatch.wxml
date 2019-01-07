@@ -70,6 +70,9 @@
   <van-transition show="{{ leftIconSlid }}" name="fade" duration="1500">
     <image class='left-slide-icon' src='/images/bhjleftslide.png'></image>
   </van-transition>
+  <van-transition show="{{!leftIconSlid}}" name="fade" duration="1500">
+    <text class='left-slide-text'>左 滑</text>
+  </van-transition>
   <van-toast id="van-toast"/>
   
 </view>

@@ -36,4 +36,11 @@
   font-size: 32rpx;
    color: #405f80;
 }
+#copyright{
+  position: absolute;
+  bottom: 5px;
+  font-size: 20rpx;
+  color: #9a9b9c;
+  font-weight: 400;
+}
 

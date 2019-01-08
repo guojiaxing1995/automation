@@ -13,4 +13,5 @@
   <button class="usermotto" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
     <text class="user-motto">{{motto}}</text>
   </button>
+  <text id='copyright'>©2018-2019 automation created by 郭家兴</text>
 </view>

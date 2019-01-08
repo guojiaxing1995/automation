@@ -63,12 +63,18 @@ Page({
             backgroundColor: '#24db56'
           });
         } else {
-          Notify("停止失败");
+          Notify({
+            text: "停止失败",
+            backgroundColor: '#ff0000'
+          });
         }
         wx.hideNavigationBarLoading();
       },
       fail: function (error) {
-        Notify("停止失败");
+        Notify({
+          text: "停止失败",
+          backgroundColor: '#ff0000'
+        });
         wx.hideNavigationBarLoading();
       }
     })
@@ -93,7 +99,7 @@ Page({
         }else{
           Notify({
             text:"启动失败",
-            backgroundColor: '#FF2A64'
+            backgroundColor: '#ff0000'
             });
         }
         wx.hideNavigationBarLoading();
@@ -101,7 +107,7 @@ Page({
       fail: function (error) {
         Notify({
           text:"启动失败",
-          backgroundColor: '#FF2A64'
+          backgroundColor: '#ff0000'
         });
         wx.hideNavigationBarLoading();
       }

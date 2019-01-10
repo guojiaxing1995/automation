@@ -38,7 +38,7 @@
 }
 #copyright{
   position: absolute;
-  bottom: 5px;
+  bottom: 2%;
   font-size: 20rpx;
   color: #9a9b9c;
   font-weight: 400;

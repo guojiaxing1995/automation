@@ -91,7 +91,8 @@ class TaskCase(Base):
     #获取依赖用例列表
     def get_dependent_case_list(self):
         dependent_case_list = []
-        dependent_case = db.session.query(TaskCase.dependent_case).all()
+        #status 为0 表示已被删除
+        dependent_case = db.session.query(TaskCase.dependent_case).filter(TaskCase.status=='1').all()
         for i in dependent_case:
             dependent_case_list = dependent_case_list + i[0].split(',')
 

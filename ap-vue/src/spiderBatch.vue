@@ -531,6 +531,8 @@ export default {
           _self.pagination.page = r.page;
           _self.pagination.pages = r.pages;
           _self.pagination.total = r.total;
+          //刷新用例列表，是否已运行设置为未运行
+          _self.hasRun = flase;
         },
         error: function(r) {}
       });
@@ -763,6 +765,8 @@ export default {
                   _self.pagination.page = r.page;
                   _self.pagination.pages = r.pages;
                   _self.pagination.total = r.total;
+                  //刷新用例列表，是否已运行设置为未运行
+                  _self.hasRun = false;
                 },
                 error: function(r) {}
               });
@@ -985,6 +989,8 @@ export default {
           }
         });
       }
+      //刷新用例列表，是否已运行设置为未运行
+      this.hasRun = false;
     },
     addTask: function() {
       const loading = this.$loading({

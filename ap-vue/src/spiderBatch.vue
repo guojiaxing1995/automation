@@ -237,9 +237,9 @@
                                                         <el-tooltip class="item" effect="dark" placement="right-end" v-if=item.description>
                                                             <div slot="content">{{item.description}}</div>
 
-                                                            <span style="font-size: x-large">{{item.name}}</span>
+                                                            <span style="font-size: large;">{{item.name}}</span>
                                                         </el-tooltip>
-                                                        <span style="font-size: x-large" v-else>{{item.name}}</span>
+                                                        <span style="font-size: large;" v-else>{{item.name}}</span>
                                                     </el-col>
                                                     <el-button type="info" size="small" icon="el-icon-edit" class="elbtn" @click.stop="openTaskBoxEdit(item)"></el-button>
                                                     <el-button type="danger" size="small" icon="el-icon-delete" class="elbtn" @click.stop="deleteTacsk"></el-button>

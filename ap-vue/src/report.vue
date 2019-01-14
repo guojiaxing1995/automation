@@ -75,7 +75,7 @@ import VLink from './VLink.vue'
                     execute_probability:[]
                 },
                 options:[],
-                taskID:1
+                taskID:0
             }
         },
         watch:{
@@ -105,7 +105,6 @@ import VLink from './VLink.vue'
         },
         mounted:function (){
             this.getTask();
-            this.getReport(2);
             this.pie();
             this.linechart();
 
@@ -121,6 +120,8 @@ import VLink from './VLink.vue'
                     data: JSON.stringify(this.sendParams),
                     success: function (r) {
                         _self.options = r;
+                        _self.taskID = r[0].id
+                        _self.getReport(r[0].id);
                     },
                     error: function (r) {
 

@@ -98,7 +98,7 @@
                 <el-table @row-click="showCaseDetail" :header-cell-style="{background:'#409EFF',color:'#FFFFFF',align:'center'}" v-loading="loading" :row-style="rowStyle" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(143, 188, 143, 0.8)" :data="tableData" height="485" stripe border style="width: 100%">
                     <el-table-column type="index" label="序号" width="80" align="center">
                     </el-table-column>
-                    <el-table-column prop="case_id" label="用例编号" width="140" align="center">
+                    <el-table-column prop="case_id" label="用例编号" width="140" :show-overflow-tooltip="true" align="center">
                     </el-table-column>
                     <el-table-column prop="case_name" label="用例名称" width="190" :show-overflow-tooltip="true" align="left">
                     </el-table-column>

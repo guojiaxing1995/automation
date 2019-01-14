@@ -66,7 +66,7 @@
                         <el-table @row-click="showCaseDetail" :header-cell-style="{background:'#409EFF',color:'#FFFFFF',align:'center'}" :row-style="rowStyle" v-loading="loading" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(143, 188, 143, 0.8)" :data="tableData" height="485" stripe highlight-current-row="true" border style="width: 100%">
                             <el-table-column type="index" label="序号" width="80" align="center">
                             </el-table-column>
-                            <el-table-column prop="case_id" label="用例编号" width="130" align="center">
+                            <el-table-column prop="case_id" label="用例编号" width="130" :show-overflow-tooltip="true" align="center">
                             </el-table-column>
                             <el-table-column prop="case_name" label="用例名称" width="180" :show-overflow-tooltip="true" align="left">
                             </el-table-column>
@@ -436,7 +436,7 @@ export default {
         header: "",
         interface_return: "",
         is_new: "",
-        is_run: "",
+        is_run: true,
         method: "",
         need_position: "",
         submission: "",
@@ -961,7 +961,7 @@ export default {
               url:
                 window.URL +
                 "/v1/task/getTaskCase?task_id=" +
-                _self.selectTaskId,
+                _self.selectTaskId + "&page=" + _self.pagination.page,
               contentType: "application/json",
               data: JSON.stringify(this.sendParams),
               success: function(r) {

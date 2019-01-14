@@ -229,7 +229,7 @@ import VLink from './VLink.vue'
                     }],
                 form:{
                     scheduler_id:'',
-                    taskID:1,
+                    taskID:0,
                     day_of_week:'',
                     time:new Date(2016, 9, 10, 5, 30),
                     user_id:2,
@@ -258,6 +258,7 @@ import VLink from './VLink.vue'
                     data: JSON.stringify(this.sendParams),
                     success: function (r) {
                         _self.options = r;
+                        _self.form.taskID = r[0]
                     },
                     error: function (r) {
 

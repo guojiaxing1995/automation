@@ -30,7 +30,7 @@ class DeleteTaskCaseForm(BaseForm):
 
 class TaskCaseForm(BaseForm):
     case_name = StringField(validators=[DataRequired(message='不许为空'), length(min=1, max=20)])
-    is_run = BooleanField(default = False)
+    is_run = BooleanField(default = True)
     method = StringField(validators=[DataRequired(message='不许为空')])
     url = StringField(validators=[DataRequired(message='不许为空')])
     header = StringField()

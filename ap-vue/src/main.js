@@ -16,8 +16,8 @@ Vue.prototype.$echarts = echarts
 
 Vue.use(ElementUI)
 
-window.URL = "http://127.0.0.1:5005";
-//window.URL = "https://www.guojiaxing.red";
+//window.URL = "http://127.0.0.1:5005";
+window.URL = "https://www.guojiaxing.red";
 
 const routes = {
     '/': interfaceTest,

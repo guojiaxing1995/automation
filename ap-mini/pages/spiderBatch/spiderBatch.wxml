@@ -1,5 +1,5 @@
 <view class='container' bindtouchstart='touchStart' bindtouchend="touchEnd">
-  <image class='head-img' src='/images/header.png' mode='aspectFill'></image>
+  <image class='head-img' src='/images/header.png' mode='aspectFill' style='overflow:visible'></image>
   <view class='head-img-hover'>
     <text class="title van-ellipsis">{{task.name}}</text>
     <text wx:if="{{task.request_header}}" class='url van-multi-ellipsis--l2'>{{task.request_header}}</text>

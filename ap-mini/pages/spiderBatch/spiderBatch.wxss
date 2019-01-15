@@ -114,13 +114,13 @@
 .left-slide-icon {
   width: 32px;
   height: 32px;
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   right: 5rpx;
   z-index: 109;
 }
 .left-slide-text{
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 8rpx;
   z-index: 109;

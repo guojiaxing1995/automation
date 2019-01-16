@@ -21,7 +21,7 @@ from app.models.user import User
 
 class Scheduler(Base):
     id = Column(Integer, primary_key=True)
-    scheduler_id = Column(String(20), nullable=False,default='default')
+    scheduler_id = Column(String(150), nullable=False,default='default')
     task = relationship('Task')
     task_id = Column(Integer, ForeignKey('task.id'), nullable=False)
     running_state = Column(Integer, nullable=False,default=1)
@@ -31,7 +31,7 @@ class Scheduler(Base):
     user = relationship('User')
     user_id = Column(Integer, ForeignKey('user.id'))
     #抄送人
-    copy_person = Column(String(160))
+    copy_person = Column(String(180))
     next_run_time = ''
 
     @orm.reconstructor
@@ -56,14 +56,14 @@ class Scheduler(Base):
             self.create_scheduler_id()
 
     def add_job(self,url):
-        current_app.apscheduler.add_job(func=self.job, args=(self.task_id,url,self.user,self.task,self.copy_person),id=self.scheduler_id, trigger='cron',
+        current_app.apscheduler.add_job(func=self.job, args=(self.task_id,url,self.task,self.scheduler_id),id=self.scheduler_id, trigger='cron',
                                         day_of_week=self.day_of_week,hour=self.hour,minute=self.minute, replace_existing=True)
 
     #恢复任务
     def resume_job(self):
         scheduler.resume_job(self.scheduler_id)
 
-    def job(self,task_id,url,user,task,copy_person):
+    def job(self,task_id,url,task,scheduler_id):
 
         data = {
             "task_id":task_id
@@ -71,8 +71,12 @@ class Scheduler(Base):
         res = requests.post(url=url,json=data)
         from app import app
         with app.app_context():
+            #查询当前定时任务和维护人
+            scheduler = Scheduler.query.filter_by(scheduler_id=scheduler_id).first_or_404()
+            user = User.query.filter_by(id=scheduler.user_id).first_or_404()
+            current_app.logger.info(scheduler.scheduler_id)
             cc = []
-            copy_list = copy_person.split(';')
+            copy_list = scheduler.copy_person.split(';')
             if copy_list:
                 for c in copy_list:
                     if c:

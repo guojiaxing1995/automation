@@ -116,6 +116,7 @@
                                 <el-table-column
                                         label="定时任务编号"
                                         width="180"
+                                        :show-overflow-tooltip="true"
                                         fixed>
                                     <template slot-scope="scope">
                                         <span style="margin-left: 5px">{{ scope.row.scheduler_id }}</span>
@@ -123,6 +124,7 @@
                                 </el-table-column>
                                 <el-table-column
                                         label="任务"
+                                        :show-overflow-tooltip="true"
                                         width="180">
                                     <template slot-scope="scope">
                                         <span style="margin-left: 5px">{{ scope.row.task.name }}</span>
@@ -130,6 +132,7 @@
                                 </el-table-column>
                                 <el-table-column
                                         label="下次执行时间"
+                                        :show-overflow-tooltip="true"
                                         width="160">
                                     <template slot-scope="scope">
                                         <span style="margin-left: 5px">{{ scope.row.next_run_time }}</span>
@@ -137,6 +140,7 @@
                                 </el-table-column>
                                 <el-table-column
                                         label="执行周期"
+                                        :show-overflow-tooltip="true"
                                         width="150">
                                     <template slot-scope="scope">
                                         <span style="margin-left: 5px">{{ scope.row.day_of_week }}</span>
@@ -144,6 +148,7 @@
                                 </el-table-column>
                                 <el-table-column
                                         label="执行时间"
+                                        :show-overflow-tooltip="true"
                                         width="130">
                                     <template slot-scope="scope">
                                         <i class="el-icon-time"></i>
@@ -152,6 +157,7 @@
                                 </el-table-column>
                                 <el-table-column
                                         label="维护人"
+                                        :show-overflow-tooltip="true"
                                         width="180">
                                     <template slot-scope="scope">
                                         <span style="margin-left: 5px">{{ scope.row.user.nickname }}</span>
@@ -258,7 +264,7 @@ import VLink from './VLink.vue'
                     data: JSON.stringify(this.sendParams),
                     success: function (r) {
                         _self.options = r;
-                        _self.form.taskID = r[0]
+                        _self.form.taskID = r[0].id
                     },
                     error: function (r) {
 
@@ -269,10 +275,10 @@ import VLink from './VLink.vue'
                 this.add_or_edit=1;
                 this.form = {
                     scheduler_id:'',
-                    taskID:1,
+                    taskID:this.options[0].id,
                     day_of_week:'',
                     time:new Date(2016, 9, 10, 5, 30),
-                    user_id:2,
+                    user_id:this.user_options[2].id,
                     copy_person:'',
                 }
 
@@ -310,6 +316,7 @@ import VLink from './VLink.vue'
                     data: JSON.stringify(this.sendParams),
                     success: function (r) {
                         _self.user_options = r;
+                        _self.form.user_id = r[2].id
                     },
                     error: function (r) {
 
@@ -414,7 +421,6 @@ import VLink from './VLink.vue'
                     success: function (r) {
                         _self.getAllJobs();
                         _self.exitEdit();
-                        loading.close();
                         _self.$alert('编辑成功！', '提示', {
                             confirmButtonText: '确定',
                             callback: action => {
@@ -424,6 +430,15 @@ import VLink from './VLink.vue'
                                 });
                             }
                         });
+                        _self.form = {
+                            scheduler_id :'',
+                            day_of_week :'',
+                            time:new Date(2016, 9, 10, 5, 30),
+                            copy_person :'',
+                            user_id: _self.user_options[2].id,
+                            taskID: _self.options[0].id
+                        };
+                        loading.close();
                     },
                     error: function (r) {
                         if (r.responseJSON.error_code) {
@@ -471,6 +486,14 @@ import VLink from './VLink.vue'
                                 });
                             }
                         });
+                        _self.form = {
+                            scheduler_id :'',
+                            day_of_week :'',
+                            time:new Date(2016, 9, 10, 5, 30),
+                            copy_person :'',
+                            user_id: _self.user_options[2].id,
+                            taskID: _self.options[0].id
+                        };
                         loading.close();
                     },
                     error: function (r) {

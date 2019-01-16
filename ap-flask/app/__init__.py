@@ -16,6 +16,7 @@ from flask_cors import *
 
 from flask_mail import Mail
 
+from app.libs.util import get_date_str
 from .app import Flask
 
 mail = Mail()
@@ -50,7 +51,7 @@ def register_logger(app):
     current_dir = os.path.dirname(__file__)
     # 获取当前目录的父级目录
     parent_dir = os.path.dirname(current_dir)
-    log_file_name = parent_dir +'/log/flaskLogger-' + time.strftime('%Y-%m-%d', time.localtime(time.time())) + '.log'
+    log_file_name = parent_dir +'/log/flaskLogger-' + get_date_str() + '.log'
     file_handler = logging.FileHandler(log_file_name)
     file_handler.setLevel(log_dict[app.config['LEVEL']]) if app.config['LEVEL'] else file_handler.setLevel(logging.INFO)
     logging_format = logging.Formatter(

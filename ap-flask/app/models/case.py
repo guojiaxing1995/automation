@@ -32,7 +32,7 @@ class Case(Base):
     url = Column(String(500),nullable=False)
     header = Column(String(500))
     deal_method = Column(String(20))
-    dependent_case = Column(String(30))
+    dependent_case = Column(String(200))
     need_position = Column(String(200))
     # 0 表单提交 1 json提交
     submission = Column(String(2))
@@ -85,8 +85,8 @@ class Case(Base):
         self.interface_return = res.json()
         self.deal_interface_return()
         self.dict_to_str()
-        self.split_interface_return()
         self.fail_or_pass()
+        self.split_interface_return()
         self.is_new = True
         self.user_id = 2
         with db.auto_commit():

@@ -22,7 +22,7 @@ class TaskCase(Base):
     method = Column(String(4), nullable=False)
     url = Column(String(50), nullable=False)
     header = Column(String(500))
-    deal_method = Column(String(20))
+    deal_method = Column(String(200))
     dependent_case = Column(String(25),default="")
     need_position = Column(String(100))
     # 0 表单提交 1 json提交

@@ -10,6 +10,7 @@ import datetime
 from wtforms import StringField,BooleanField,IntegerField
 from wtforms.validators import DataRequired, length, AnyOf
 
+from app.libs.util import get_date_str
 from app.validators.base import BaseForm
 
 
@@ -59,7 +60,7 @@ class UpdateTaskCaseForm(BaseForm):
 
 class ReportForm(BaseForm):
     task_id = IntegerField(validators=[DataRequired(message='不许为空')])
-    report_date = StringField(default=datetime.datetime.now().strftime('%Y-%m-%d'))
+    report_date = StringField(default=get_date_str)
 
 class SchedulerAddForm(BaseForm):
     task_id = IntegerField(validators=[DataRequired(message='不许为空')])

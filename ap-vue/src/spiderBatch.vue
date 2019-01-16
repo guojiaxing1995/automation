@@ -848,7 +848,7 @@ export default {
       this.fromBox = false;
       (this.form.case_id = ""),
         (this.form.case_name = ""),
-        (this.form.is_run = ""),
+        (this.form.is_run = true),
         (this.form.method = "get"),
         (this.form.url = ""),
         (this.form.header = ""),

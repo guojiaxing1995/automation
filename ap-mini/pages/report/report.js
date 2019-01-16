@@ -177,22 +177,22 @@ Page({
         title: {
 
         },
-        color: ['#E6A23C', '#67C23A', '#F56C6C'],
+        color: ['#67C23A', '#F56C6C','#E6A23C'],
         legend: {
           data: [{
             name: '通过率',
             textStyle: {
-              color: '#E6A23C'
+              color: '#67C23A'
             }
           }, {
             name: '失败率',
             textStyle: {
-              color: '#67C23A'
+              color: '#F56C6C'
             }
           }, {
             name: '执行率',
             textStyle: {
-              color: '#F56C6C'
+              color: '#E6A23C'
             }
           }],
           top: 30,

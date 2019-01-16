@@ -93,8 +93,6 @@ Page({
     var turn = this.slidPage();
     if (turn == "left") {
       this.setData({ popupShow: true });
-    }else if(turn == "up"){
-      this.onReachBottom();
     }
   },
   //左右滑动屏幕

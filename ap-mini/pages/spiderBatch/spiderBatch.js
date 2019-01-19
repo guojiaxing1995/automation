@@ -24,12 +24,29 @@ Page({
       startY: 0
     }
   },
+  onPullDownRefresh: function (options) {
+    var that = this;
+    this.getTaskData();
+    this.setData({
+      popupShow: false,
+      has_run: false
+    });
+    var timer = setInterval(function () {
+      if (that.data.taskData.length > 0) {
+        that.setData({
+          taskID: that.data.taskData[0].id
+        });
+        that.getCurrentTask(-1);
+        clearTimeout(timer);
+      }
+    }, 500)
+    wx.stopPullDownRefresh();
+  },
   onLoad: function (options) {
     wx.showNavigationBarLoading();
     var that = this;
     this.getTaskData();
     if (app.globalData.taskID){
-      console.log("lalala")
       this.setData({
         taskID: app.globalData.taskID
       });

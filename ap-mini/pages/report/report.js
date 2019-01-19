@@ -22,6 +22,19 @@ Page({
     taskData: [],
     taskID: 0
   },
+  onPullDownRefresh: function(options){
+    var that = this;
+    this.pieComponnet = this.selectComponent('#mychart-dom-pie');
+    this.lineComponnet = this.selectComponent('#mychart-dom-line');
+    this.getTaskData();
+    var times = setInterval(function () {
+      if (that.data.taskID != 0) {
+        that.getReportData(that.data.taskID, that.data.taskName);
+        clearTimeout(times);
+      }
+    }, 500)
+    wx.stopPullDownRefresh();
+  },
   onLoad: function (options) {
     wx.showNavigationBarLoading();
     var that = this;

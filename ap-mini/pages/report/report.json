@@ -3,5 +3,7 @@
     "ec-canvas": "../../ec-canvas/ec-canvas"
   },
   "navigationBarBackgroundColor": "#f57723",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

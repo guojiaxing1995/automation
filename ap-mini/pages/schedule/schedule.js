@@ -9,6 +9,10 @@ Page({
   onLoad: function (options) {
     this.getJobs();
   },
+  onPullDownRefresh: function (options) {
+    this.getJobs();
+    wx.stopPullDownRefresh();
+  },
   getJobs(){
     var that = this;
     wx.request({

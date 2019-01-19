@@ -8,6 +8,10 @@ Page({
   onLoad: function (options) {
     this.getTaskData();
   },
+  onPullDownRefresh: function (options) {
+    this.getTaskData();
+    wx.stopPullDownRefresh();
+  },
   onSearch(event){
     var case_id = event.detail
     wx.navigateTo({

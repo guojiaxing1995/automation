@@ -38,4 +38,12 @@
 
 ## 小程序端
 自动化测试工具。PC端自动化测试平台的辅助工具。可一键执行批量测试，也可方便的查看用例详情，执行结果和执行报告。
-![小程序](https://github.com/guojiaxing1995/automation/blob/master/github_img/mini1.jpg)![小程序](https://github.com/guojiaxing1995/automation/blob/master/github_img/mini1.jpg)![小程序](https://github.com/guojiaxing1995/automation/blob/master/github_img/mini1.jpg)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/1.jpg" width="260"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/2.jpg" width="260"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/3.jpg" width="260" />
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/4.jpg" width="260"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/5.jpg" width="260"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/6.jpg" width="260" />
+
+
+方便快速查看，前端（PC、小程序）未作账户体系，但后端flask已经实现，具体可查看代码。

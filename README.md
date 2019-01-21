@@ -3,10 +3,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过vue element + python flask实现前后端分离的自动化测试平台，并配套辅助小程序工具。目前完成接口测试部分，包含功能：接口测试、定时任务、用例批量执行、查看执行报告和查询用例执行记录。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目目前已经上线 PC端：https://automation.guojiaxing.red/   
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小程序端：![自动化测试助手](https://github.com/guojiaxing1995/automation/blob/master/github_img/wei-mini.jpg)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目目前已经上线 PC端：https://automation.guojiaxing.red/ &nbsp;小程序端：![自动化测试助手]<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/wei-mini.jpg" width="100"/>
 
 ## PC端
 #### 接口测试

@@ -42,5 +42,5 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/4.jpg" width="260"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/5.jpg" width="260"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/guojiaxing1995/automation/blob/master/github_img/6.jpg" width="260" />
 
-
+<br><br><br><br>
 方便快速查看，前端（PC、小程序）未作账户体系，但后端flask已经实现，具体可查看代码。

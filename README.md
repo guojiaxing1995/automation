@@ -1,5 +1,6 @@
-# automation
-自动化测试平台
+<h1 align="center">automation</h1>
+<br>
+<h4 align="center">自动化测试平台</h4>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过vue element + python flask实现前后端分离的自动化测试平台，并配套辅助小程序工具。目前完成接口测试部分，包含功能：接口测试、定时任务、用例批量执行、查看执行报告和查询用例执行记录。
 

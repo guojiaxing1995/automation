@@ -35,7 +35,12 @@
 
                 <el-form ref="searchForm" :model="searchForm" label-width="80px">
                     <el-row :gutter="10">
-                        <el-col :span="4" :offset="5">
+                      <el-col :span="1" :offset="1">
+                        <div @click="rotationButton" id="rotation" @mouseover="rotationButton" @mouseout="rotationButton">
+                        <el-button type="primary" size="mini" icon="el-icon-caret-top" circle @click="leftBox=!leftBox"></el-button>
+                      </div>
+                      </el-col>
+                        <el-col :span="4" :offset="3">
                             <el-form-item label="用例名称:" style="font-weight:600">
                                 <el-input v-model="searchForm.name" size="large" placeholder="请输入用例名称"></el-input>
                             </el-form-item>
@@ -56,8 +61,9 @@
 
                     </el-row>
                 </el-form>
+
                 <el-row>
-                    <el-col :span="22" offset="1" style="height: 3px">
+                    <el-col style="height: 3px">
                         <div class="grid-content"></div>
                     </el-col>
                 </el-row>
@@ -109,10 +115,6 @@
                         </div>
                     </el-col>
                 </el-row>
-
-                <div style="position: absolute;left: 30px;top: 90px;" @click="rotationButton" id="rotation" @mouseover="rotationButton" @mouseout="rotationButton">
-                    <el-button type="primary" size="mini" icon="el-icon-caret-top" circle @click="leftBox=!leftBox"></el-button>
-                </div>
 
                 <div class='popContainer' v-show="fromBox">
 
@@ -393,9 +395,8 @@
                     </div>
                 </div>
 
-                <div id="footer" class="flex-hor-center">
-                    <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
-                </div>
+                <div id="footer_min" v-if="minWindow"><span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span></div>
+                <div id="footer" v-else><span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span></div>
 
             </el-main>
         </el-container>
@@ -407,8 +408,28 @@ export default {
   components: {
     VLink
   },
+  mounted() {
+    const that = this;
+        window.onresize = () => {
+            return (() => {
+                that.screenHeight = window.innerHeight;
+            })()
+        }
+  },
+  watch: {
+    screenHeight(val){
+      if(this.screenHeight<=745){
+          this.minWindow = true;
+      }else{
+          this.minWindow = false;
+      }
+      
+    }
+  },
   data() {
     return {
+      minWindow: true,
+      screenHeight: window.innerHeight,
       activeIndex: "2",
       disabledform: false,
       disabledjson: true,
@@ -1261,6 +1282,8 @@ export default {
   border-radius: 4px;
   min-height: 3px;
   background: #99a9bf;
+  width: 97%;
+  margin: 0 auto;
 }
 
 .box {
@@ -1281,8 +1304,15 @@ export default {
   position: absolute;
   bottom: 4%;
   width: 97%;
+  display: flex;
+  justify-content: center;
 }
-.flex-hor-center {
+#footer_min {
+  color: #9a9b9c;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 97%;
   display: flex;
   justify-content: center;
 }
@@ -1420,5 +1450,8 @@ td {
 
 .el-container {
   height: 100%;
+}
+#rotation{
+  
 }
 </style>

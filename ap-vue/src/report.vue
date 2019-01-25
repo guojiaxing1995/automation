@@ -46,8 +46,11 @@
                 </span>
             </el-dialog>
 
-            <div id="footer" class="flex-hor-center">
+            <div id="footer_min" v-if="minWindow">
                 <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
+            </div>
+            <div id="footer" v-else>
+            <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
             </div>
 
         </div>
@@ -60,6 +63,8 @@ import VLink from './VLink.vue'
     },
         data() {
             return {
+                minWindow: true,
+                screenHeight: window.innerHeight,
                 robotWeiXingDialog: false,
                 activeIndex: '4',
                 reportDate:{},
@@ -79,6 +84,14 @@ import VLink from './VLink.vue'
             }
         },
         watch:{
+            screenHeight(val){
+                if(this.screenHeight<=745){
+                this.minWindow = true;
+                }else{
+            this.minWindow = false;
+            }
+      
+            },
             cicleData:{
 
                 handler:function(val,oldval){
@@ -107,6 +120,13 @@ import VLink from './VLink.vue'
             this.getTask();
             this.pie();
             this.linechart();
+
+            const that = this;
+            window.onresize = () => {
+            return (() => {
+                that.screenHeight = window.innerHeight;
+            })()
+        }
 
         },
         methods: {
@@ -349,35 +369,28 @@ import VLink from './VLink.vue'
         margin-right: 0 ! important ;
     }
 
-    .grid-content2 {
-        border-radius: 6px;
-        min-height: 6px;
-        background: #409EFF;
-
-    }
-
-    .grid-content {
-        border-radius: 4px;
-        min-height: 3px;
-        background: #99a9bf;
-
-    }
-
     .el-radio-group {
         width: 66.5%;
     }
 
-    #footer {
-        color: #9a9b9c;
-        font-weight: 400;
-        position: absolute;
-        bottom: 4%;
-        width: 97%;
-    }
-    .flex-hor-center {
-        display: flex;
-        justify-content: center;
-    }
+#footer {
+  color: #9a9b9c;
+  font-weight: 400;
+  position: absolute;
+  bottom: 4%;
+  width: 97%;
+  display: flex;
+  justify-content: center;
+}
+#footer_min {
+  color: #9a9b9c;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 97%;
+  display: flex;
+  justify-content: center;
+}
     .elbtn{
         margin: 0;
     }

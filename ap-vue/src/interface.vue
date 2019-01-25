@@ -123,7 +123,10 @@
           </el-row>
 
         </el-form>
-        <div id="footer" class="flex-hor-center">
+        <div id="footer_min" v-if="minWindow">
+          <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
+        </div>
+        <div id="footer" v-else>
           <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
         </div>
       </el-main>
@@ -136,8 +139,28 @@ export default {
   components: {
     VLink
   },
+  mounted() {
+    const that = this;
+        window.onresize = () => {
+            return (() => {
+                that.screenHeight = window.innerHeight;
+            })()
+        }
+  },
+  watch: {
+    screenHeight(val){
+      if(this.screenHeight<=745){
+          this.minWindow = true;
+      }else{
+          this.minWindow = false;
+      }
+      
+    }
+  },
   data() {
     return {
+      minWindow: true,
+      screenHeight: window.innerHeight,
       activeIndex: "1",
       disabledform: false,
       disabledjson: true,
@@ -359,9 +382,15 @@ export default {
   position: absolute;
   bottom: 4%;
   width: 97%;
+  display: flex;
+  justify-content: center;
 }
-
-.flex-hor-center {
+#footer_min {
+  color: #9a9b9c;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 97%;
   display: flex;
   justify-content: center;
 }

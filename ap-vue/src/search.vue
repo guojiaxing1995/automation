@@ -89,9 +89,7 @@
 
         </el-form>
         <el-row>
-            <el-col :span="22" offset="1" style="height: 3px">
                 <div class="grid-content"></div>
-            </el-col>
         </el-row>
         <div style="text-align: center">
             <div id="table">
@@ -210,8 +208,11 @@
             </el-scrollbar>
         </div>
 
-        <div id="footer" class="flex-hor-center">
-            <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
+        <div id="footer_min" v-if="minWindow">
+          <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
+        </div>
+        <div id="footer" v-else>
+          <span>© 2018-2019 automation created by 郭家兴 | 晋ICP备18013433号</span>
         </div>
     </div>
 </template>
@@ -221,8 +222,28 @@ export default {
   components: {
     VLink
   },
+    mounted() {
+    const that = this;
+        window.onresize = () => {
+            return (() => {
+                that.screenHeight = window.innerHeight;
+            })()
+        }
+  },
+  watch: {
+    screenHeight(val){
+      if(this.screenHeight<=745){
+          this.minWindow = true;
+      }else{
+          this.minWindow = false;
+      }
+      
+    }
+  },
   data() {
     return {
+      minWindow: true,
+      screenHeight: window.innerHeight,
       activeIndex: "5",
       detailTab: false,
       detail: {
@@ -420,16 +441,12 @@ export default {
   margin-right: 0 !important ;
 }
 
-.grid-content2 {
-  border-radius: 6px;
-  min-height: 6px;
-  background: #409eff;
-}
-
 .grid-content {
   border-radius: 4px;
   min-height: 3px;
   background: #99a9bf;
+  width: 94%;
+  margin: 0 auto;
 }
 
 .box {
@@ -448,10 +465,18 @@ export default {
   color: #9a9b9c;
   font-weight: 400;
   position: absolute;
-  bottom: 1%;
+  bottom: 4%;
   width: 97%;
+  display: flex;
+  justify-content: center;
 }
-.flex-hor-center {
+#footer_min {
+  color: #9a9b9c;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-bottom: 15px;
+  width: 97%;
   display: flex;
   justify-content: center;
 }
